@@ -27,4 +27,6 @@ config.gem "rspec-rails",
 config.gem "thoughtbot-factory_girl",
   :lib    => "factory_girl",
   :source => "http://gems.github.com"
+config.gem "cucumber",
+  :version => ">= 0.4.4",
 
