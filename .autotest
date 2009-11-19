@@ -1,3 +1,0 @@
-require 'autotest/growl'
-require 'snarl'
-require 'lib/autotest/growl-to-snarl'
