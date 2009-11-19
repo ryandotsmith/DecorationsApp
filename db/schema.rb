@@ -9,12 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091118051224) do
+ActiveRecord::Schema.define(:version => 20091119005734) do
 
   create_table "base_todo_lists", :force => true do |t|
     t.integer  "base_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "encrypted_password", :limit => 128
+    t.string   "salt",               :limit => 128
+    t.string   "confirmation_token", :limit => 128
+    t.string   "remember_token",     :limit => 128
+    t.boolean  "email_confirmed",                   :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

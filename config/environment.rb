@@ -3,7 +3,11 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
- 
+  config.gem "clearance",
+    :lib     => 'clearance',
+    :source  => 'http://gemcutter.org',
+    :version => '0.8.3'
+   
   config.time_zone = 'UTC'
 
 end
