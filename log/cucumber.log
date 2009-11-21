@@ -1,1 +1,7 @@
-# Logfile created on Fri Nov 20 20:06:33 -0600 2009
+# Logfile created on Fri Nov 20 20:06:33 -0600 2009REQUESTING PAGE: GET /base_todo_items/new with {} and HTTP headers {}
+
+
+Processing BaseTodoItemsController#new (for 127.0.0.1 at 2009-11-20 21:59:25) [GET]
+Rendering template within layouts/base_todo_items
+Rendering base_todo_items/new
+Completed in 1375ms (View: 1312, DB: 0) | 200 OK [http://www.example.com/base_todo_items/new]

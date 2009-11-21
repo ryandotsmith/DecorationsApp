@@ -1,6 +1,6 @@
 Feature: Manage base_todo_lists
-  In order to show the customer base_todo_lists
-  base_todo_list
+  In order to see all of the base_todo_lists
+  As a customer
   should show all base_todo_lists in the Base_List
   
   Scenario: Register new base_todo_list
