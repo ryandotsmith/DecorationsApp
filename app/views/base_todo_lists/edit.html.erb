@@ -1,0 +1,12 @@
+<h1>Editing base_todo_list</h1>
+
+<% form_for(@base_todo_list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @base_todo_list %> |
+<%= link_to 'Back', base_todo_lists_path %>
