@@ -10,6 +10,24 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
+    when /the new base_todo_list page/
+      new_base_todo_list_path
+
+    when /the new base_todo_item page/
+      new_base_todo_item_path
+
+    when /the new base_todo_items page/
+      new_base_todo_items_path
+
+    when /the new todo_items page/
+      new_todo_items_path
+
+    when /the new todo_list page/
+      new_todo_list_path
+
+    when /the new delete page/
+      new_delete_path
+
     
     # Add more mappings here.
     # Here is a more fancy example:

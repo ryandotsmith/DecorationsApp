@@ -8,3 +8,7 @@
   [4;36;1mBaseTodoList Create (15.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-18 23:44:10', 1, '2009-11-18 23:44:10')[0m
   [4;36;1mBaseTodoList Create (15.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-18 23:44:57', 1, '2009-11-18 23:44:57')[0m
   [4;36;1mBaseTodoList Create (15.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-18 23:48:33', 1, '2009-11-18 23:48:33')[0m
+  [4;36;1mBaseTodoList Create (16.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-20 20:46:56', 1, '2009-11-20 20:46:56')[0m
+  [4;36;1mBaseTodoList Create (0.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-20 21:00:36', 1, '2009-11-20 21:00:36')[0m
+  [4;36;1mBaseTodoList Create (16.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-21 02:09:36', 1, '2009-11-21 02:09:36')[0m
+  [4;36;1mBaseTodoList Create (47.0ms)[0m   [0;1mINSERT INTO "base_todo_lists" ("updated_at", "base_id", "created_at") VALUES('2009-11-21 02:41:13', 1, '2009-11-21 02:41:13')[0m
