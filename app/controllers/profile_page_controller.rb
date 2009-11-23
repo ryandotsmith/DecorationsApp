@@ -1,9 +1,10 @@
 class ProfilePageController < ApplicationController
 
   def show
-    if params[:id] 
-      @user = User.find( params[:id] )
-      @new_basecamp_account = BasecampAccount.new
+    @user = User.find(params[:id]) if params[:id]
+    @user ||= current_user
+    if @user
+      @new_basecamp_account = @user.basecamp_accounts.build
     else
       redirect_to new_session_url unless params[:id]
     end

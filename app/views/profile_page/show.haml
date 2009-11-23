@@ -1,13 +1,11 @@
 #left
-  = form_for @new_basecamp_account do |form|
+  - form_for @new_basecamp_account do |form|
     %fieldset
       = form.label :username, "BaseCamp Username"
       = form.text_field :username
-
       = form.label :password, "BaseCamp Password"
       = form.text_field :password
-
-      = form.submit "add basecamp account"
+      = form.submit "add"
 
   #basecamp_accounts
     - @user.basecamp_accounts.each do |account|
