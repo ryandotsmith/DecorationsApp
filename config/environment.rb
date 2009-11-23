@@ -13,3 +13,5 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
 
 end
+
+require 'clearance_hacks'

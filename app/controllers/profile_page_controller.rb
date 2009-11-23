@@ -1,9 +1,5 @@
 class ProfilePageController < ApplicationController
 
-  def edit 
-
-  end
-
   def show
     if params[:id] 
       @user = User.find( params[:id] )

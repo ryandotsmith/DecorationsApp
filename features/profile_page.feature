@@ -6,4 +6,8 @@ Feature: Creating a profile page for users
   Scenario: Creating a profile page upong account verification
     Given I signed up with "email@person.com/password"
     When I follow the confirmation link sent to "email@person.com"
-    Then I should see "Account settings for email@person.com"
+    Then I should see "Account Settings For: email@person.com"
+
+
+
+
