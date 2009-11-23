@@ -1,3 +1,5 @@
+HOST = 'localhost:3000'
+DO_NOT_REPLY = 'donotreply@decorationsapp.com'
 RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 

@@ -4,9 +4,6 @@ Then /^I should see error messages$/ do
   assert_match /error(s)? prohibited/m, response.body
 end
 
-Given /^I am signed in$/ do
-  Given %{I have signed in with "this.ryansmith@gmail.com/password"}
-end
 # Database
 
 Given /^no user exists with an email of "(.*)"$/ do |email|
