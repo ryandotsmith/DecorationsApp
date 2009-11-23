@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include Clearance::User
-  #has_one profile_page    
+  has_many :basecamp_accounts
 
   def confirm_email!
     self.email_confirmed    = true

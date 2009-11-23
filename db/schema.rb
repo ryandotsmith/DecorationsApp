@@ -9,10 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091119005734) do
+ActiveRecord::Schema.define(:version => 20091123041039) do
 
   create_table "base_todo_lists", :force => true do |t|
     t.integer  "base_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "basecamp_accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "username"
+    t.string   "password"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,1 +1,17 @@
-%h1= "Account Settings For: #{ current_user.email }"  
+#left
+  = form_for @new_basecamp_account do |form|
+    %fieldset
+      = form.label :username, "BaseCamp Username"
+      = form.text_field :username
+
+      = form.label :password, "BaseCamp Password"
+      = form.text_field :password
+
+      = form.submit "add basecamp account"
+
+  #basecamp_accounts
+    - @user.basecamp_accounts.each do |account|
+      %ul
+        %li= account.name
+#right
+  %h1= "Account Settings For: #{ current_user.email }"  

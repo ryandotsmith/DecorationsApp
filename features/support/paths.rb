@@ -10,7 +10,8 @@ module NavigationHelpers
       new_session_path
     when /the password reset request page/i
       new_password_path
-    
+    when /my profile page/i
+      profile_page_path(:id => @user.id)
     # Add more page name => path mappings here
     
     else
