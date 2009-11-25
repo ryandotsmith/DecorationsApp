@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091123041039) do
+ActiveRecord::Schema.define(:version => 20091125164817) do
 
   create_table "base_todo_lists", :force => true do |t|
     t.integer  "base_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20091123041039) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "account_name"
   end
 
   create_table "users", :force => true do |t|

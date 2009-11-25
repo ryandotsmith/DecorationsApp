@@ -5,12 +5,16 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
+  config.time_zone = 'UTC'
+
   config.gem "clearance",
     :lib     => 'clearance',
     :source  => 'http://gemcutter.org',
     :version => '0.8.3'
-   
-  config.time_zone = 'UTC'
+  config.gem "turingstudio-basecamp-rb",
+    :soruce => "http://gems.github.com",
+    :lib => "basecamp"
+
 
 end
 

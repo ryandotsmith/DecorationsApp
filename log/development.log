@@ -868,3 +868,153 @@ Rendering profile_page/show
   [4;35;1mBasecampAccount Load (0.4ms)[0m   [0mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
   [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c546532b9d35231ea99c6e085ce5e0dbd48810a7') LIMIT 1[0m
 Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/profile_page?id=1]
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-23 01:00:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering profile_page/show
+  [4;36;1mBasecampAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c546532b9d35231ea99c6e085ce5e0dbd48810a7') LIMIT 1[0m
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/profile_page?id=1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBaseTodoLists (20091118051224)
+Migrating to ClearanceCreateUsers (20091119005734)
+Migrating to CreateBasecampAccounts (20091123041039)
+Migrating to AddColumnToBasecampAccount (20091125164817)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "basecamp_accounts" ADD "account_name" varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091125164817')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("base_todo_lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("basecamp_accounts")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_remember_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_confirmation_token')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "base_todo_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "base_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "basecamp_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "username" varchar(255), "password" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "account_name" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "encrypted_password" varchar(128), "salt" varchar(128), "confirmation_token" varchar(128), "remember_token" varchar(128), "email_confirmed" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE INDEX "index_users_on_id_and_confirmation_token" ON "users" ("id", "confirmation_token")[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091125164817')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091118051224')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091119005734')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091123041039')[0m
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-25 14:48:48) [GET]
+Redirected to http://localhost:3000/session/new
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-25 14:48:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 113ms (View: 54, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-25 14:48:59) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"this.ryansmith@gmail.com"}, "action"=>"create", "authenticity_token"=>"PjHWeWamZcdA+YclGU/P3/694vLBBqcoMA8zrtlOsns=", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (23.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'this.ryansmith@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-25 20:48:59', "remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 98ms (DB: 24) | 302 Found [http://localhost/session]
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-25 14:48:59) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering profile_page/show
+  [4;35;1mBasecampAccount Load (0.4ms)[0m   [0mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-25 14:49:02) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering profile_page/show
+  [4;35;1mBasecampAccount Load (0.3ms)[0m   [0mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-25 14:49:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering profile_page/show
+  [4;35;1mBasecampAccount Load (0.3ms)[0m   [0mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031') LIMIT 1[0m
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/profile_page?id=1]
+
+
+Processing BasecampAccountsController#create (for 127.0.0.1 at 2009-11-25 14:50:07) [POST]
+  Parameters: {"commit"=>"add", "basecamp_account"=>{"username"=>"ryandotmsith", "password"=>"whatever "}, "authenticity_token"=>"PjHWeWamZcdA+YclGU/P3/694vLBBqcoMA8zrtlOsns="}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031') LIMIT 1[0m
+  [4;36;1mBasecampAccount Create (0.3ms)[0m   [0;1mINSERT INTO "basecamp_accounts" ("name", "created_at", "updated_at", "username", "user_id", "password", "account_name") VALUES(NULL, '2009-11-25 20:50:07', '2009-11-25 20:50:07', 'ryandotmsith', 1, 'whatever ', NULL)[0m
+Redirected to http://localhost:3000/profile_page?id=1
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/basecamp_accounts]
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-25 14:50:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering profile_page/show
+  [4;36;1mBasecampAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031') LIMIT 1[0m
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/profile_page?id=1]
+
+
+Processing ProfilePageController#show (for 127.0.0.1 at 2009-11-25 14:50:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering profile_page/show
+  [4;35;1mBasecampAccount Load (0.4ms)[0m   [0mSELECT * FROM "basecamp_accounts" WHERE ("basecamp_accounts".user_id = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '62d8fadb201d4dffc01c0965aec61e4e58d1a031') LIMIT 1[0m
+Completed in 17ms (View: 5, DB: 1) | 200 OK [http://localhost/profile_page?id=1]
