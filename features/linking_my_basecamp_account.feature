@@ -5,6 +5,8 @@ Feature: Linking my DecorationsApp account with my basecamp account
 
   Scenario: Adding my credentials in my account page
     Given I am signed in
-    When I fill in "basecamp_user_login" with "ryandotsmith"
-    And I fill in "basecamp_user_password" with "password"
-    Then I should see "Your basecamp account is ready to be decorated!"
+    And I am on my profile page
+    When I fill in "BaseCamp Username" with "ryandotsmith"
+    And I fill in "BaseCamp Password" with "password"
+    And I press "add"
+    Then I should see "BaseCamp Account Added!"
