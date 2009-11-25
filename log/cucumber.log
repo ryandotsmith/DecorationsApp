@@ -5,3 +5,31 @@ Processing BaseTodoItemsController#new (for 127.0.0.1 at 2009-11-20 21:59:25) [G
 Rendering template within layouts/base_todo_items
 Rendering base_todo_items/new
 Completed in 1375ms (View: 1312, DB: 0) | 200 OK [http://www.example.com/base_todo_items/new]
+REQUESTING PAGE: GET /base_todo_items/new with {} and HTTP headers {}
+
+
+Processing BaseTodoItemsController#new (for 127.0.0.1 at 2009-11-22 16:08:04) [GET]
+Rendering template within layouts/base_todo_items
+Rendering base_todo_items/new
+Completed in 750ms (View: 734, DB: 0) | 200 OK [http://www.example.com/base_todo_items/new]
+REQUESTING PAGE: GET /base_todo_items/new with {} and HTTP headers {}
+
+
+Processing BaseTodoItemsController#new (for 127.0.0.1 at 2009-11-22 16:45:15) [GET]
+Rendering template within layouts/base_todo_items
+Rendering base_todo_items/new
+Completed in 797ms (View: 797, DB: 0) | 200 OK [http://www.example.com/base_todo_items/new]
+REQUESTING PAGE: GET /base_todo_items/new with {} and HTTP headers {}
+
+
+Processing BaseTodoItemsController#new (for 127.0.0.1 at 2009-11-22 16:48:05) [GET]
+Rendering template within layouts/base_todo_items
+Rendering base_todo_items/new
+Completed in 297ms (View: 281, DB: 0) | 200 OK [http://www.example.com/base_todo_items/new]
+REQUESTING PAGE: GET /base_todo_items/new with {} and HTTP headers {}
+
+
+Processing BaseTodoItemsController#new (for 127.0.0.1 at 2009-11-22 16:53:09) [GET]
+Rendering template within layouts/base_todo_items
+Rendering base_todo_items/new
+Completed in 313ms (View: 313, DB: 0) | 200 OK [http://www.example.com/base_todo_items/new]

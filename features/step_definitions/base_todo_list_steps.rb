@@ -2,6 +2,12 @@ Given /^the following base_todo_lists:$/ do |base_todo_lists|
   BaseTodoList.create!(base_todo_lists.hashes)
 end
 
+When /^(?:|I )fill in the following:$/ do |fields|
+  fields.rows_hash.each do |name, value|
+    When %{I fill in "#{name}" with "#{value}"}
+  end
+end
+
 When /^I delete the (\d+)(?:st|nd|rd|th) base_todo_list$/ do |pos|
   visit base_todo_lists_url
   within("table > tr:nth-child(#{pos.to_i+1})") do

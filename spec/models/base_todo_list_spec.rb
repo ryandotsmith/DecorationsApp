@@ -9,6 +9,5 @@ describe BaseTodoList do
 
   it "should create a new instance given valid attributes" do
     BaseTodoList.create!(@valid_attributes)
-    
   end
 end
