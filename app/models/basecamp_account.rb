@@ -5,9 +5,10 @@ class BasecampAccount < ActiveRecord::Base
     Basecamp::Base.establish_connection!(account_name, username, password, true)
   end
 
-  def find_list(id)
+  def find_list(query=nil)
     connect!
-    Basecamp::TodoList.find(id) 
+    query ||= :all
+    Basecamp::TodoList.find(query) 
   end
 
 end
