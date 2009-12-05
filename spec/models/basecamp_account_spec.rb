@@ -12,7 +12,8 @@ describe "connecting account" do
     Basecamp::Base.should_receive(:establish_connection!).with(
       "http://test.basecamphq.com",
       "ryandotsmith",
-      "passw0rd"
+      "passw0rd",
+      true
     )
     bca.connect!
   end
