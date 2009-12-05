@@ -10,3 +10,6 @@ Feature: Linking my DecorationsApp account with my basecamp account
     And I fill in "BaseCamp Password" with "password"
     And I press "add"
     Then I should see "BaseCamp Account Added!"
+
+
+
