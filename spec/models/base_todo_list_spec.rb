@@ -6,11 +6,3 @@ describe "building a new item from basecamp" do
   end
 end
 
-#describe "looking for todo lists that are in basecamp" do
-  #it "should filter lists by ones that are in basecamp" do
-    #account = Factory(:basecamp_account)
-    #tl1     = Factory(:base_todo_list)
-    #tl2     = Factory(:base_todo_list, :basecamp_id => 11111111)
-    #BaseTodoList.all_in_basecamp(account).should eql([tl1])
-  #end
-#end

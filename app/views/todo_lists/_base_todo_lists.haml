@@ -1,3 +1,6 @@
 #decorated_todo_lists
   - base_todo_lists.each do |list|
-    %h3= list.basecamp_id
+    %h3= list.name
+    %ul
+      - list.base_todo_items.each do |item|
+        %li= item.content

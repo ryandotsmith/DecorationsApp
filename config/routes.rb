@@ -4,4 +4,5 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :profile_page, :controller => "profile_page"
   map.resources :basecamp_accounts
   map.resources :todo_lists
+  map.resources :todo_items
 end

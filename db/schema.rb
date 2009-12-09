@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091209033408) do
+ActiveRecord::Schema.define(:version => 20091209153449) do
+
+  create_table "base_todo_items", :force => true do |t|
+    t.integer  "base_todo_list_id"
+    t.integer  "basecamp_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "base_todo_lists", :force => true do |t|
     t.integer  "basecamp_id"
