@@ -1,0 +1,11 @@
+#content
+  #left
+    %h2 Basecamp Todo Lists
+    - @user.basecamp_accounts.each do |account|
+      - account.find_list.each do |list|
+        %h3= list.name
+        %ul
+          - list.todo_items.each do |item|
+            %li= item.content
+  #center
+  #right

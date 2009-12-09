@@ -18,4 +18,5 @@ Rails::Initializer.run do |config|
 
 end
 
+require 'g'
 require 'clearance_hacks'

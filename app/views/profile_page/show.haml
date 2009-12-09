@@ -1,15 +1,26 @@
+%h1= "Account Settings For: #{ current_user.email }"  
 #left
   - form_for @new_basecamp_account do |form|
     %fieldset
-      = form.label :username, "BaseCamp Username"
+      = form.label :account_name, "Basecamp Account Name"
+      = form.text_field :account_name
+
+      = form.label :username, "Basecamp Username"
       = form.text_field :username
-      = form.label :password, "BaseCamp Password"
-      = form.text_field :password
+
+      = form.label :password, "Basecamp Password"
+      = form.password_field :password
+
       = form.submit "add"
 
   #basecamp_accounts
     - @user.basecamp_accounts.each do |account|
+      %h2= account.account_name
+      - next unless account.valid?
       %ul
-        %li= account.name
+        %li= account.username
+        - string = ""
+        - account.password.each_char {string += "*"}
+        %li= string
 #right
-  %h1= "Account Settings For: #{ current_user.email }"  
+  = link_to "create lists", new_todo_list_url(:user_id => @user.id) 

@@ -29,5 +29,9 @@ describe "finding a list" do
     Basecamp::TodoList.should_receive(:find).with(:all)
     @bca.find_list
   end
+  it "should grab the list with specified ID when specified" do
+    Basecamp::TodoList.should_receive(:find).with(999)
+    @bca.find_list 999
+  end
 end
 

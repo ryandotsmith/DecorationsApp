@@ -18,6 +18,8 @@ config.action_controller.allow_forgery_protection    = false
 config.action_mailer.delivery_method = :test
 
 
+require 'g'
+
 config.gem "rspec", 
   :lib => false, 
   :version => ">= 1.2.0"
