@@ -17,6 +17,11 @@ class TodoListsController < ApplicationController
     end
   end
 
+  def destroy
+    BaseTodoList.find(params[:id]).destroy
+    redirect_to :back
+  end
+
   #private
   def load_user
     user_id = params[:user_id]

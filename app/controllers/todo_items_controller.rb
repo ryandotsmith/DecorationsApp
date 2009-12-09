@@ -6,6 +6,7 @@ class TodoItemsController < ApplicationController
     @todo_list = @user.base_todo_lists.build(params[:todo_list]) if @todo_list.nil?
     @todo_item = @todo_list.base_todo_items.build(params[:todo_item])
     if @todo_item.save! and @todo_list.save!
+
       respond_to do |format|
         format.js { render :action => "create.js.erb", :layout => false} 
       end
