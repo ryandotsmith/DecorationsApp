@@ -1,0 +1,4 @@
+$("#decorated_todo_lists").replaceWith("<%= escape_javascript(
+  render :partial => "base_todo_lists", :locals => {:base_todo_lists => @user.base_todo_lists}
+ ) %>");
+

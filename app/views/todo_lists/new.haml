@@ -3,9 +3,14 @@
     %h2 Basecamp Todo Lists
     - @user.basecamp_accounts.each do |account|
       - account.find_list.each do |list|
-        %h3= list.name
-        %ul
+        %h3
+          = list.name 
+          = link_to "import", "#", :class => "import"
+        %ul{:id => list.id}
           - list.todo_items.each do |item|
-            %li= item.content
+            %li{:id => item.id}= item.content
   #center
   #right
+    %h2 Decorated Todo Lists
+    = render :partial => "base_todo_lists", :locals => {:base_todo_lists => @user.base_todo_lists}
+

@@ -1,2 +1,10 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready( function() {
+  $(".import").bind("click",function(){
+    jQuery.ajax({
+      type: "POST",
+      url: "/todo_lists/",
+      dataType: "script",
+      data: "user_id=1&todo_list[basecamp_id]=12345"
+    });
+  });
+});

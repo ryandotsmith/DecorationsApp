@@ -1,5 +1,5 @@
 class TodoListsController < ApplicationController
-  before_filter :load_user, :only => [:new]
+  before_filter :load_user, :only => [:new,:create]
 
   def index
   end
@@ -7,8 +7,16 @@ class TodoListsController < ApplicationController
   def new
   end
 
-  #private
+  def create
+    @todo_list = @user.base_todo_lists.build(params[:todo_list])
+    if @todo_list.save!
+      respond_to do |format|
+        format.js {render :action => "create.js.erb", :layout => false} 
+      end
+    end
+  end
 
+  #private
   def load_user
     user_id = params[:user_id]
     @user = User.find user_id unless user_id.nil?

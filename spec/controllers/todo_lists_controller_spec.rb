@@ -17,6 +17,12 @@ describe TodoListsController do
       get :new, :user_id => @user.id
       response.should render_template("todo_lists/new")
     end
+
   end
 
+  describe "Creating a new todo list from a basecamp id" do
+    it "should find the list from the basecamp api" do
+      post :create, :basecamp_id => ""
+    end
+  end
 end
