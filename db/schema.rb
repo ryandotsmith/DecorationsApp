@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091209153449) do
+ActiveRecord::Schema.define(:version => 20091209175938) do
 
   create_table "base_todo_items", :force => true do |t|
     t.integer  "base_todo_list_id"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20091209153449) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "account_name"
+  end
+
+  create_table "estimators", :force => true do |t|
+    t.integer  "base_todo_item_id"
+    t.integer  "time_to_completion"
+    t.integer  "level_of_difficulty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

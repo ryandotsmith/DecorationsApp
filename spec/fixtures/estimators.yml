@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  base_todo_item_id: 1
+  time_to_completion: 1
+  level_of_difficulty: 1
+
+two:
+  base_todo_item_id: 1
+  time_to_completion: 1
+  level_of_difficulty: 1

@@ -1,1 +1,8 @@
-%h1 todo lists
+%h1 Backlog 
+%table
+  - @todo_items.each do |item|
+    %tr{:id => item.id}
+      %td= link_to "edit", edit_todo_item_url(:id => item.id,:user_id => @user.id)
+      %td= item.estimator.level_of_difficulty
+      %td= item.estimator.time_to_completion
+      %td= item.content

@@ -1,5 +1,15 @@
 class TodoItemsController < ApplicationController
-  before_filter :load_user, :only => [:new,:create]
+  before_filter :load_user, :only => [:edit,:update,:new,:create]
+
+  def edit
+    @todo_item = BaseTodoItem.find(params[:id]) 
+  end
+
+  def update
+    @todo_item = BaseTodoItem.find(params[:id])
+    @todo_item.update_attributes(params[:base_todo_item]) 
+    redirect_to todo_lists_url(:user_id => @user.id)
+  end
 
   def create
     @todo_list = BaseTodoList.find_by_basecamp_id(params[:todo_list][:basecamp_id])

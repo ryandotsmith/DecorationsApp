@@ -1,7 +1,8 @@
 class TodoListsController < ApplicationController
-  before_filter :load_user, :only => [:new,:create]
+  before_filter :load_user, :only => [:index,:new,:create]
 
   def index
+    @todo_items = @user.base_todo_lists.collect {|list| list.base_todo_items}.flatten  
   end
 
   def new
@@ -22,7 +23,6 @@ class TodoListsController < ApplicationController
     redirect_to :back
   end
 
-  #private
   def load_user
     user_id = params[:user_id]
     @user = User.find user_id unless user_id.nil?

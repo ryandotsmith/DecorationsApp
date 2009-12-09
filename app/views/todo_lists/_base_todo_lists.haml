@@ -2,7 +2,7 @@
   - base_todo_lists.each do |list|
     %h3
       = list.name
-      = link_to "delete", todo_list_path(list), :method => :delete, :confirmation => "are you sure?" 
+      = link_to "delete", todo_list_path(list), :method => :delete, :confirm => "are you sure?" 
     %ul
       - list.base_todo_items.each do |item|
         %li= item.content

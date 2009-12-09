@@ -1,0 +1,8 @@
+- form_for(@todo_item, :url => {:controller => "todo_items", :action => :update, :user_id => 1})do |form|
+  - form.fields_for :estimator do |fields|
+    = fields.label :time_to_completion, "Time to Completion"
+    = fields.text_field :time_to_completion
+
+    = fields.label :level_of_difficulty, "Level of Difficulty"
+    = fields.text_field :level_of_difficulty
+  = form.submit "update"
