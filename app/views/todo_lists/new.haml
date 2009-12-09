@@ -1,4 +1,8 @@
 #content
+  #top
+    = link_to image_tag("backlog_button.png",:style=> "width:100px"), todo_lists_url(:user_id => @user.id), :id => "backlog_button"
+    #loading
+      = image_tag "loading.gif"
   #left
     %h2 Basecamp Todo Lists
     - @user.basecamp_accounts.each do |account|
@@ -6,15 +10,14 @@
         %h3
           = list.name 
           - if BaseTodoList.find_by_basecamp_id(list.id).nil?
-            = link_to "import", "#", :id => "import_list_#{list.id}",:class => "import", :rel => list.id
+            = link_to image_tag("arrow_right.png"), "#", :id => "import_list_#{list.id}",:class => "import", :rel => list.id
         %ul{:id => list.id}
           - list.todo_items.each do |item|
             %li{:id => item.id}
-              = item.content
+              = shorten(item.content) 
               - if BaseTodoItem.find_by_basecamp_id(item.id).nil?
-                = link_to "import", "#", :class => "item_import", :rel => item.id
-  #center
-    = link_to image_tag("backlog_button.png"), todo_lists_url(:user_id => @user.id), :id => "backlog_button"
+                = link_to image_tag("arrow_right.png"), "#", :class => "item_import", :rel => item.id
+
   #right
     %h2 Decorated Todo Lists
     = render :partial => "base_todo_lists", :locals => {:base_todo_lists => @user.base_todo_lists}

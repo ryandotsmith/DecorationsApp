@@ -22,6 +22,13 @@ $(document).ready( function() {
 
   $('a[rel*=facebox]').facebox()
 
-
+  $('#loading')
+    .hide() 
+    .ajaxStart(function() {
+        $(this).show();
+    })
+    .ajaxStop(function() {
+        $(this).hide();
+    });
 
 });

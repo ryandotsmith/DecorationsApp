@@ -4,8 +4,21 @@ body {
 form label {
   display: block; }
 
+img {
+  border: none; }
+
+a {
+  color: black; }
+
 #box {
   margin: 100px auto;
   padding: 30px;
   width: 1024px;
+  min-height: 800px;
   background-color: #e3e3e3; }
+
+#top a {
+  float: left; }
+#top #loading {
+  width: 50px;
+  margin: 0 auto 15px; }

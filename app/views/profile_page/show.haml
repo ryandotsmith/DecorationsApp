@@ -17,12 +17,12 @@
   %a{:href =>"#new_basecamp_account_form",:rel =>"facebox"} Add new account
   #basecamp_accounts
     - @user.basecamp_accounts.each do |account|
-      %h2= account.account_name
       - next unless account.valid?
+      %h2
+        = link_to account.account_name, new_todo_list_url(:user_id => @user.id)
+        = link_to image_tag("cancel_button.png"), "/basecamp_accounts/#{account.id}", :method => :delete
       %ul
         %li= account.username
         - string = ""
         - account.password.each_char {string += "*"}
         %li= string
-#right
-  = link_to "create lists", new_todo_list_url(:user_id => @user.id) 

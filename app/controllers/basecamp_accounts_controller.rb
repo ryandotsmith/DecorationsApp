@@ -10,4 +10,9 @@ class BasecampAccountsController < ApplicationController
     redirect_to profile_page_path( :id => current_user.id )
   end
 
+  def destroy
+    BasecampAccount.find(params[:id]).destroy
+    redirect_to profile_page_path( :id => current_user.id )
+  end
+
 end
