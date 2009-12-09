@@ -2,3 +2,5 @@ $("#decorated_todo_lists").replaceWith("<%= escape_javascript(
   render :partial => "todo_lists/base_todo_lists", :locals => {:base_todo_lists => @user.base_todo_lists}
  ) %>");
 
+ $("#<%= @todo_item.basecamp_id %> > a").remove();
+

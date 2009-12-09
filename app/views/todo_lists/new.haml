@@ -6,12 +6,13 @@
         %h3
           = list.name 
           - if BaseTodoList.find_by_basecamp_id(list.id).nil?
-            = link_to "import", "#", :class => "import", :rel => list.id
+            = link_to "import", "#", :id => "import_list_#{list.id}",:class => "import", :rel => list.id
         %ul{:id => list.id}
           - list.todo_items.each do |item|
             %li{:id => item.id}
               = item.content
-              = link_to "import", "#", :class => "item_import", :rel => item.id
+              - if BaseTodoItem.find_by_basecamp_id(item.id).nil?
+                = link_to "import", "#", :class => "item_import", :rel => item.id
   #center
   #right
     %h2 Decorated Todo Lists
